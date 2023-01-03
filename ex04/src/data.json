@@ -1,0 +1,25 @@
+{
+    "boards": [
+        {
+            "idx": "1",
+            "title": "title111",
+            "content": "content111",
+            "date": "20230301",
+            "writer": "w11"
+        },
+        {
+            "idx": "2",
+            "title": "title222",
+            "content": "content222",
+            "date": "20230301",
+            "writer": "w22"
+        },
+        {
+            "idx": "3",
+            "title": "title333",
+            "content": "content333",
+            "date": "20230301",
+            "writer": "w33"
+        }
+    ]
+}

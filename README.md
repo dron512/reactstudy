@@ -1,11 +1,2 @@
 # reactclass
-# reactclass
-# reactclass
-# reactclass
-# reactclass
-# reactclass
-# reactclass
-# reactclass
-# myreact
-# reactstudy
-# reactstudy
+json-server --watch ./src/data.json port 3001

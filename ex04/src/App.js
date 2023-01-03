@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Board from './components/Board';
 import Content from './components/Content';
+import FreeBoard from './components/FreeBoard';
 import MyComponents from './components/MyComponents';
 import Nav from './components/Nav';
 import TodaysPlan from './components/TodaysPlan';
@@ -31,8 +32,11 @@ function App() {
       <BrowserRouter>
       <Nav></Nav>
       <Switch>
-        <Route exact path="">
+        <Route exact path="/Main">
           <Content></Content>
+        </Route>
+        <Route>
+          <FreeBoard></FreeBoard>
         </Route>
       </Switch>
       <h1 className='title'>게시판</h1>

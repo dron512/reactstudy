@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.navul{
+    list-style: none;
+}
+.navli{
+
+}
+.nava{
+    background-color: #0033ee;
+    color: wheat;
+    display: inline-block;
+    padding: 0.7rem;
+    margin: 0.5rem;
+    text-decoration: none;
+}
