@@ -1,14 +1,9 @@
-import React, { useRef, useState } from 'react';
-
+import React from 'react';
+import Button from '@mui/material/Button';
 import './App.css';
+import FormInput from './components/FormInput';
 
 function App() {
-  const [myid, setId] = useState('');
-  const $id = useRef();
-  const idKeyDownFunction = (e) => {
-    $id.value = e.target.value;
-    setId($id.value);
-  };
   return (
     <div className="App">
       <div>
@@ -17,27 +12,31 @@ function App() {
           <form>
             <div className="divInput">
               <label>ID</label>
-              <input
-                type="text"
+              <FormInput
                 name="id"
                 id="id"
-                autoFocus
-                ref={$id}
-                onKeyDown={idKeyDownFunction}
+                myProps={{ placeholder: '아이디를 입력하하세요', autoFocus: true }}
               />
             </div>
             <div className="divInput">
               <label>PASSWORD</label>
-              <input type="text" name="password" id="password" />
+              <FormInput
+                name="password"
+                id="password"
+                myProps={{ placeholder: '패스워드를 입력하세요' }}
+              />
             </div>
             <div className="divInput">
               <label>REPASSWORD</label>
-              <input type="text" name="conPassword" id="conPassword" />
+              <FormInput
+                name="conPassword"
+                id="conPassword"
+                myProps={{ placeholder: '패스워드를 입력하세요' }}
+              />
             </div>
             <div>
-              <input type="submit" value="memberJoin" />
+              <Button variant="contained">전송</Button>
             </div>
-            id ={myid}
           </form>
         </div>
         @ parkmyounghoi made
