@@ -28,14 +28,17 @@ function Content() {
                     <li className="cli" style={{ marginLeft: `${mydis}rem` }}>
                         <img
                             src="images/a.png"
+                            alt="a.png"
                             style={{ float: 'left', width: '30rem', height: '20rem' }}
                         />
                         <img
                             src="images/b.png"
+                            alt="b.png"
                             style={{ float: 'left', width: '30rem', height: '20rem' }}
                         />
                         <img
                             src="images/c.png"
+                            alt="c.png"
                             style={{ float: 'left', width: '30rem', height: '20rem' }}
                         />
                     </li>

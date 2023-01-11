@@ -1,31 +1,35 @@
 import React from 'react';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 import './App.css';
+import Header from './components/Header';
 
-class Person{
-  constructor(name,age){
-    this.name = name;
-    this.age = age;
-  }
-}
-
-let aryPerson = Array([])
-aryPerson.push(new Person("aa",20))
-aryPerson.push(new Person("bb",30))
-aryPerson.push(new Person("cc",25))
-aryPerson.push(new Person("dd",22))
-aryPerson.push(new Person("ee",24))
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function App() {
-  let test ="테스트";
   return (
     <div className="App">
-      {test}
-      { 
-        aryPerson.forEach((person)=>{
-          return person.name
-        })  
-      }
+      <BrowserRouter>
+        <div id="wrap">
+          <div id="main_header">
+            <h1>VOCA</h1>
+            <div id="menu">
+              <h1>
+                <Link to="days/1">1일차</Link>
+                <Link to="days/2">2일차</Link>
+                <Link to="days/3">3일차</Link>
+              </h1>
+            </div>
+          </div>
+          <div>
+            <Switch>
+              <Route exact path="/"></Route>
+              <Route path="/days/:day"></Route>
+            </Switch>
+          </div>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
