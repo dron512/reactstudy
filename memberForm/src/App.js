@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import Button from '@mui/material/Button';
 import './App.css';
 import FormInput from './components/FormInput';
+import Counter from './components/Counter';
+
+export const CounterContext = createContext(0);
 
 function App() {
+  const [count, setCount] = useState(0);
   return (
     <div className="App">
       <div>
+        <CounterContext.Provider value={count}>
+          <Counter></Counter>
+        </CounterContext.Provider>
+        <Button
+          variant="contained"
+          onClick={() => {
+            setCount(count + 1);
+          }}
+        >
+          +
+        </Button>
+        <Button
+          variant="contained"
+          onClick={() => {
+            setCount(count - 1);
+          }}
+        >
+          -
+        </Button>
         <h1>memberJoin</h1>
         <div className="divBox">
           <form>
