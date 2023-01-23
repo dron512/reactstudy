@@ -1,67 +1,80 @@
-import React from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 import "./App.css";
 import Content from "./components/Content";
 import Days from "./components/Days";
-import Slider from "react-slick";
+
+import data from "./db.json";
+
+export const initialData = {
+  aaa: {
+    aa: "0",
+    bb: "10",
+  },
+  bbb: {
+    aa: "10",
+    bb: "100",
+  },
+};
+
+export const ContextMyObj = createContext({
+  myobj: initialData.bbb,
+  setMyobj: () => {},
+});
 
 function App() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+  const [myobj, setMyobj] = useState(initialData.bbb);
+  useEffect(() => {
+    setTimeout(() => {
+      if (myobj.aa === "0") setMyobj({ ...myobj.bbb, aa: "100" });
+      else setMyobj({ ...myobj.bbb, aa: "200" });
+    }, 5000);
+  }, [myobj]);
   return (
     <div className="App">
+      myobj.aa = {myobj.aa}
       <BrowserRouter>
         <div id="wrap">
           <div id="main_header">
             <h1>
               <Link to="/">VOCA</Link>
             </h1>
-            <div id="menu">
+            <div id="top_menu">
               <ul>
                 <li>
-                  <Link to="days/1">1일차</Link>
+                  <Link to="dayadd">날짜추가</Link>
                 </li>
                 <li>
-                  <Link to="days/2">2일차</Link>
+                  <Link to="wordadd">단어추가</Link>
                 </li>
                 <li>
-                  <Link to="days/3">3일차</Link>
+                  <label htmlFor="dayList">날짜보기</label>
                 </li>
+              </ul>
+            </div>
+            <input type="checkbox" id="dayList" />
+            <div id="bottom_menu">
+              <ul>
+                {data.days.map((data) => {
+                  return (
+                    <li key={`${data.date}`}>
+                      <Link to={`days/${data.date}`}>{data.date}일차</Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
           <div id="main_content">
-            <Routes>
-              <Route exact path="/" element={<Content></Content>}></Route>
-              <Route path="/days/:day" element={<Days></Days>}></Route>
-            </Routes>
+            <ContextMyObj.Provider value={{ myobj, setMyobj }}>
+              <Routes>
+                <Route exact path="/" element={<Content></Content>}></Route>
+                <Route path="/days/:day" element={<Days></Days>}></Route>
+              </Routes>
+            </ContextMyObj.Provider>
           </div>
-          <Slider {...settings}>
-            <div>
-              <h3>1</h3>
-            </div>
-            <div>
-              <h3>2</h3>
-            </div>
-            <div>
-              <h3>3</h3>
-            </div>
-            <div>
-              <h3>4</h3>
-            </div>
-            <div>
-              <h3>5</h3>
-            </div>
-            <div>
-              <h3>6</h3>
-            </div>
-          </Slider>
+
           <div id="main_footer">@copy right park myoung hoi</div>
         </div>
       </BrowserRouter>

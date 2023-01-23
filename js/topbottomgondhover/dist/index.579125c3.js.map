@@ -1,0 +1,1 @@
+{"mappings":"AAAA,MAAM,IAAI;AAEV,QAAQ,GAAG,CAAC,CAAC,gBAAgB,EAAE,EAAE,CAAC","sources":["src/index.js"],"sourcesContent":["const a = \"안녕하세요 십새\";\n\nconsole.log(`원투쓰리포파이브식스세븐에잇나인${a}`);\n"],"names":[],"version":3,"file":"index.579125c3.js.map","sourceRoot":"/__parcel_source_root/"}

@@ -1,0 +1,12 @@
+{
+  "days": [
+    { "id": 1, "date": 1 },
+    { "id": 2, "date": 2 },
+    { "id": 3, "date": 3 }
+  ],
+  "words": [
+    { "id": 1, "date": 1, "ko": "한글", "en": "english" },
+    { "id": 2, "date": 2, "ko": "사과", "en": "apple" },
+    { "id": 3, "date": 3, "ko": "파인애플", "en": "pineapple" }
+  ]
+}

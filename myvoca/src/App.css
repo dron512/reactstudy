@@ -20,29 +20,96 @@ a {
   position: relative;
   height: 100px;
 }
-#menu {
+#top_menu {
   position: absolute;
-  top: 2em;
-  right: 2em;
+  top: 0;
+  right: 0;
 }
-#menu > ul {
+#top_menu > ul {
   overflow: hidden;
 }
-#menu > ul > li {
-  float: left;
+#top_menu > ul > li {
   list-style: none;
   display: inline-block;
   margin: 0 1em;
   background-color: #333;
   padding: 0.3rem 1rem;
 }
-#menu > ul > li > a {
+#top_menu > ul > li > label {
+  cursor: pointer;
+  color: #fff;
+  font-size: 2rem;
+}
+#dayList {
+  display: none;
+}
+#dayList + #bottom_menu {
+  display: none;
+}
+#dayList:checked + #bottom_menu {
+  display: block;
+}
+#top_menu > ul > li > a {
+  color: #fff;
+  font-size: 2rem;
+}
+#bottom_menu {
+  position: absolute;
+  top: 3.5em;
+  right: 3.5em;
+}
+#bottom_menu > ul {
+  overflow: hidden;
+}
+#bottom_menu > ul > li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 1em;
+  background-color: #333;
+  padding: 0.3rem 1rem;
+}
+#bottom_menu > ul > li > a {
   color: #fff;
   font-size: 2rem;
 }
 #main_content {
   min-height: 490px;
 }
+#slider {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+#slider > div {
+}
+#slider > div > div {
+  float: left;
+}
+#slider > div > div:nth-child(n) {
+  background-color: red;
+}
+#slider > div > div:nth-child(2n) {
+  background-color: blue;
+}
+#slider > div > div:nth-child(3n) {
+  background-color: yellow;
+}
+#slider > div > div:nth-child(4n) {
+  background-color: brown;
+}
+#slider > div > div {
+  width: 300px;
+  height: 300px;
+}
+
 #main_footer {
+  text-align: center;
+}
+
+#table {
+  width: 100%;
+  border: 1px solid;
+}
+#table > td {
   text-align: center;
 }
